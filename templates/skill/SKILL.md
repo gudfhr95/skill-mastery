@@ -1,6 +1,7 @@
 ---
 name: skill-name
-description: "Use when Codex needs to [describe the task, workflow, file type, tool, or domain this skill supports]. Include concrete trigger scenarios, important boundaries, and any related tasks this skill should not handle."
+description: "Use when an agent needs to [describe the task, workflow, file type, tool, or domain this skill supports]. Include concrete trigger scenarios, important boundaries, and any related tasks this skill should not handle."
+# disable-model-invocation: true
 ---
 
 # {{Skill Title}}
@@ -34,10 +35,22 @@ Add resource folders only when they directly improve repeatability:
   be loaded only when needed.
 - `assets/`: templates, images, fonts, boilerplate, or other files used in the
   final output.
-- `agents/openai.yaml`: optional UI metadata after the skill behavior is clear.
+- `agents/openai.yaml`: optional Codex metadata after the skill behavior is
+  clear.
 
 Do not add placeholder resource folders or extra documentation files unless the
 skill needs them.
+
+## Invocation Policy
+
+For side-effectful skills that should only run after explicit user invocation:
+
+- Add `disable-model-invocation: true` to `SKILL.md` frontmatter for Claude
+  Code.
+- Add `policy.allow_implicit_invocation: false` to `agents/openai.yaml` for
+  Codex.
+
+Omit these settings for skills that are safe to trigger automatically.
 
 ## Success Criteria
 
