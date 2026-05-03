@@ -1,6 +1,6 @@
 ---
 name: skill-name
-description: "Use when an agent needs to [describe the task, workflow, file type, tool, or domain this skill supports]. Include concrete trigger scenarios, important boundaries, and any related tasks this skill should not handle."
+description: "Use when an agent needs to [describe the task, workflow, file type, tool, or domain this skill supports]. Include concrete trigger scenarios, important boundaries, and nearby tasks this skill should not handle."
 # disable-model-invocation: true
 ---
 
@@ -8,8 +8,8 @@ description: "Use when an agent needs to [describe the task, workflow, file type
 
 <!--
 Replace placeholders before publishing the skill. Keep this file concise and
-move detailed references, deterministic scripts, and reusable output assets into
-resource folders only when the skill genuinely needs them.
+move detailed references, deterministic scripts, reusable templates, and output
+assets into resource folders only when the skill genuinely needs them.
 -->
 
 ## Purpose
@@ -33,8 +33,9 @@ Add resource folders only when they directly improve repeatability:
 - `scripts/`: deterministic helpers for fragile or repeated operations.
 - `references/`: detailed domain, API, schema, or workflow material that should
   be loaded only when needed.
-- `assets/`: templates, images, fonts, boilerplate, or other files used in the
-  final output.
+- `templates/`: reusable text, code, or file skeletons used to create outputs.
+- `assets/`: images, fonts, binary templates, or other files used in final
+  outputs.
 - `agents/openai.yaml`: optional Codex metadata after the skill behavior is
   clear.
 
