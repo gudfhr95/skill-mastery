@@ -15,7 +15,8 @@ assets into resource folders only when the skill genuinely needs them.
 ## Purpose
 
 State what this skill helps an agent do and why the workflow deserves a
-dedicated skill.
+dedicated skill. Treat newly created skills as `Unranked` until evaluation
+evidence supports promotion.
 
 ## Workflow
 
@@ -25,6 +26,14 @@ dedicated skill.
 3. Perform the work using the target environment's existing patterns.
 4. Validate the result with checks that match the task's risk.
 5. Report the outcome, evidence, and any remaining limitations.
+
+## Evaluation
+
+Define a small evaluation starting point for the skill's trigger scenarios,
+non-trigger scenarios, instruction-following scenarios, lightweight metrics,
+regression cases, and privacy-safe evidence notes. When using `skill-create`,
+start from `templates/evaluation-template.md` if a separate evaluation artifact
+is useful.
 
 ## Resources
 
@@ -62,6 +71,8 @@ Omit these settings for skills that are safe to trigger automatically.
 - The validation steps catch the most likely failure modes.
 - Realistic examples or evaluations can show when the skill passes or needs
   revision.
+- Evaluation cases cover expected triggers, nearby non-triggers, instruction
+  following, and at least one regression risk.
 
 ## Improvement
 
